@@ -51,7 +51,12 @@
 * **[2023.12.4]** Release inference code and gradio demo. We are working to improve MagicAnimate, stay tuned!
 * **[2023.11.23]** Release MagicAnimate paper and project page.
 
+## Installation for Windows
+
+Refer to [INSTALL-Windows.md](INSTALL-Windows.md) for Windows installation instructions.
+
 ## 🏃‍♂️ Getting Started
+
 Please download the pretrained base models for [StableDiffusion V1.5](https://huggingface.co/runwayml/stable-diffusion-v1-5) and [MSE-finetuned VAE](https://huggingface.co/stabilityai/sd-vae-ft-mse).
 
 Download our MagicAnimate [checkpoints](https://huggingface.co/zcxu-eric/MagicAnimate).
