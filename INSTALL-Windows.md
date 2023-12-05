@@ -18,28 +18,35 @@ MagicAnimate has 18 GB of files.
 
 Now we need to selectively download files for [sd-vae-ft-mse](https://huggingface.co/stabilityai/sd-vae-ft-mse) and [stable-diffusion-v1-5](https://huggingface.co/runwayml/stable-diffusion-v1-5). You could git clone the entire lot of large files and it will work, but selectively downloading will save a lot more disk space, time and bandwidth.
 
-We only need the following files in `pretrained_models/`. There are 26 GB of files here.
+We only need the following files in `pretrained_models/`.
 
 ```txt
-./sd-vae-ft-mse/config.json
-./sd-vae-ft-mse/diffusion_pytorch_model.safetensors
-./stable-diffusion-v1-5/scheduler/scheduler_config.json
-./stable-diffusion-v1-5/text_encoder/config.json
-./stable-diffusion-v1-5/text_encoder/pytorch_model.bin
-./stable-diffusion-v1-5/tokenizer/merges.txt
-./stable-diffusion-v1-5/tokenizer/special_tokens_map.json
-./stable-diffusion-v1-5/tokenizer/tokenizer_config.json
-./stable-diffusion-v1-5/tokenizer/vocab.json
-./stable-diffusion-v1-5/unet/config.json
-./stable-diffusion-v1-5/unet/diffusion_pytorch_model.bin
-./stable-diffusion-v1-5/v1-5-pruned-emaonly.safetensors
-./stable-diffusion-v1-5/vae/config.json
-./stable-diffusion-v1-5/vae/diffusion_pytorch_model.bin
+MagicAnimate/*
+sd-vae-ft-mse/config.json
+sd-vae-ft-mse/diffusion_pytorch_model.safetensors
+stable-diffusion-v1-5/scheduler/scheduler_config.json
+stable-diffusion-v1-5/text_encoder/config.json
+stable-diffusion-v1-5/text_encoder/pytorch_model.bin
+stable-diffusion-v1-5/tokenizer/merges.txt
+stable-diffusion-v1-5/tokenizer/special_tokens_map.json
+stable-diffusion-v1-5/tokenizer/tokenizer_config.json
+stable-diffusion-v1-5/tokenizer/vocab.json
+stable-diffusion-v1-5/unet/config.json
+stable-diffusion-v1-5/unet/diffusion_pytorch_model.bin
+stable-diffusion-v1-5/v1-5-pruned-emaonly.safetensors
+stable-diffusion-v1-5/vae/config.json
+stable-diffusion-v1-5/vae/diffusion_pytorch_model.bin
 ```
 
-Here are the download links on [HuggingFace](https://huggingface.co/):
+### Automatic download
 
-Note when you download the non LFS files, the default filename is likely to be incorrect, e.g `vae/config.json` will be downloaded as `vae_config.json`. You will need to rename the files to the correct name and place the correct dir.
+`download_pretrained_models.ps1` will download all the required `sd-vae-ft-mse/` and `stable-diffusion-v1-5/` files into the correct dirs.
+
+    powershell.exe -ExecutionPolicy Bypass -File download_pretrained_models.ps1
+
+### Manual download
+
+Note when you download the non LFS files, the default filename is likely to be incorrect, e.g `vae/config.json` will be downloaded as `vae_config.json`. You will need to rename the files to the correct name and place into the correct dir.
 
 Create all required dirs
 
@@ -50,6 +57,8 @@ Create all required dirs
     mkdir pretrained_models/stable-diffusion-v1-5/tokenizer
     mkdir pretrained_models/stable-diffusion-v1-5/unet
     mkdir pretrained_models/stable-diffusion-v1-5/vae
+
+Here are the download links on [HuggingFace](https://huggingface.co/):
 
 Download into `pretrained_models/sd-vae-ft-mse/` (319 MB):
 
@@ -74,5 +83,7 @@ Download into `pretrained_models/stable-diffusion-v1-5/` (7 GB):
 | `vae/config.json`                   | [Download](https://huggingface.co/runwayml/stable-diffusion-v1-5/resolve/main/vae/config.json?download=true)                   |
 | `vae/diffusion_pytorch_model.bin`   | [Download](https://huggingface.co/runwayml/stable-diffusion-v1-5/resolve/main/vae/diffusion_pytorch_model.bin?download=true)   |
 | `v1-5-pruned-emaonly.safetensors`   | [Download](https://huggingface.co/runwayml/stable-diffusion-v1-5/resolve/main/v1-5-pruned-emaonly.safetensors?download=true)   |
+
+## Run
 
 To start Gradio demo, run `run_gradio_demo.cmd`

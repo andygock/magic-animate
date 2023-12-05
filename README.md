@@ -53,7 +53,7 @@
 
 ## Installation for Windows
 
-Refer to [INSTALL-Windows.md](INSTALL-Windows.md) for Windows installation instructions.
+Refer to [Windows installation](./INSTALL-Windows.md) instructions.
 
 ## 🏃‍♂️ Getting Started
 
