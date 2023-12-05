@@ -93,10 +93,10 @@ if (!(Test-Path -Path "pretrained_models")) {
 
 Set-Location .\pretrained_models
 
-if (!(Test-Path -Path "MagicAnimate")) {
-  Write-Output  "Downloading ~18GB of MagicAnimate models..."
-  git clone https://huggingface.co/zcxu-eric/MagicAnimate
-}
+# if (!(Test-Path -Path "MagicAnimate")) {
+#   Write-Output  "Downloading ~18GB of MagicAnimate models..."
+#   git clone https://huggingface.co/zcxu-eric/MagicAnimate
+# }
 
 foreach ($file in $filesToDownload) {
   Write-Output "Downloading $($file.url) ..."
