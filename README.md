@@ -1,3 +1,11 @@
+## 🏢 Running MagicAnimate in Windows
+
+This fork of [MagicAnimate](https://github.com/magic-research/magic-animate) is modified to include instructions on setting up on Windows. It is tested with Python 3.10.6, Windows 10, RTX 4080 with NVIDIA graphics driver 536.67. No CUDA Toolkit or cuDNN installed. There is a script for downloading the required prerequisite models.
+
+Refer to [Windows installation](./INSTALL-Windows.md) instructions. It describes steps for setting up a Python virtual environment, cloning the repository, and installing necessary dependencies. It guides users on how to download and organize the pretrained models from HuggingFace, either manually or using a provided PowerShell script.
+
+***
+
 <!-- # magic-edit.github.io -->
 
 <p align="center">
@@ -50,10 +58,6 @@
 ## 📢 News
 * **[2023.12.4]** Release inference code and gradio demo. We are working to improve MagicAnimate, stay tuned!
 * **[2023.11.23]** Release MagicAnimate paper and project page.
-
-## Installation for Windows
-
-Refer to [Windows installation](./INSTALL-Windows.md) instructions.
 
 ## 🏃‍♂️ Getting Started
 

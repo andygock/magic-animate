@@ -1,18 +1,25 @@
 # Windows Installation
 
-This is tested with Python 3.10.6 on Windows 10.
+This is tested with Python 3.10.6, Windows 10, RTX 4080 with NVIDIA graphics driver 536.67. No CUDA Toolkit or cuDNN installed.
 
-Use full path to Python if needed, if you have multiple Python versions installed.
+- [Download and install ffmpeg](https://ffmpeg.org/download.html#build-windows), the binary must be in your PATH.
+
+Clone this repo
+
+    git clone https://github.com/andygock/magic-animate
+    cd magic-animate
+
+Install venv, if you have multiple versions of Python installed, you will want to use full path to the desired Python binary dir
 
     c:\Python\Python310\python -m venv venv
     .\venv\Scripts\activate
     pip install -r requirements-windows.txt
 
-## Adding `pretrained_models`
+## Adding `pretrained_models/`
 
     mkdir pretrained_models
     cd pretrained_models
-    git clone https://huggingface.co/zcxu-eric/MagicAnimate
+    git lfs clone https://huggingface.co/zcxu-eric/MagicAnimate
 
 MagicAnimate has 18 GB of files.
 
@@ -38,11 +45,13 @@ stable-diffusion-v1-5/vae/config.json
 stable-diffusion-v1-5/vae/diffusion_pytorch_model.bin
 ```
 
-### Automatic download
+### Automatic download (recommended)
 
-`download_pretrained_models.ps1` will download all the required `sd-vae-ft-mse/` and `stable-diffusion-v1-5/` files into the correct dirs.
+Run `download_pretrained_models.ps1` from the project's root directory will download all the required `sd-vae-ft-mse/` and `stable-diffusion-v1-5/` files into the correct dirs.
 
     powershell.exe -ExecutionPolicy Bypass -File download_pretrained_models.ps1
+
+If you already any of the files, manually create the dir structure and put the files in there. The downloader script will skip downloading files if they already exist in the correct target dir. Any other extra files in the target dir will be left alone.
 
 ### Manual download
 
